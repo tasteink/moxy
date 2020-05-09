@@ -1,8 +1,9 @@
 import awa from "await-to-js"
 import monk from "monk"
 
-const onConnected = () => {
+const onConnected = (db) => {
   console.log("✔ Connected to database.")
+  return db
 }
 
 const onError = (error) => {
