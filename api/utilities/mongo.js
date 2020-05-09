@@ -1,7 +1,16 @@
 import awa from "await-to-js"
 import monk from "monk"
 
-const db = monk(process.env.CONNECTION_STRING)
+const onConnected = () => {
+  console.log("✔ Connected to database.")
+}
+
+const onError = (error) => {
+  console.log("❌ Failed to connect to database.")
+  throw error
+}
+
+export const db = monk(process.env.CONNECTION_STRING).then(onConnected).catch(onError)
 const collections = {}
 
 export const getCollection = (name) => {

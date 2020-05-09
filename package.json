@@ -5,11 +5,11 @@
   "author": "Colton Colcleasure",
   "license": "MIT",
   "scripts": {
-    "start": "babel-node ./api",
-    "dev": "babel-node ./api",
-    "micro": "babel-node ./api/index.js"
+    "now-bbbbb": "babel src --out-dir api",
+    "develop": "now dev"
   },
   "dependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.6",

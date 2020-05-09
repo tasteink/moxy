@@ -1,9 +1,14 @@
-import { getCollection } from "./mongo"
-import { send, json } from "micro"
+import "dotenv/config"
+import "regenerator-runtime/runtime"
+import microCors from "micro-cors"
 
-export const find = async (req, res) => {
-  const body = await json(req)
+import { getCollection } from "./utilities/mongo"
+
+const find = async (req, res) => {
+  const { method, query, body, headers } = req
   const collection = getCollection(body.collection)
   const [error, docs] = await collection.find(body.args)
-  send(res, 200, [error, docs])
+  res.status(200).json({ body: [error, docs] })
 }
+
+export default microCors()(find)
