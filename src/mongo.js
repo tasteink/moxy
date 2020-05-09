@@ -1,7 +1,7 @@
 import awa from "await-to-js"
 import monk from "monk"
 
-const db = monk(process.env.MONGO_CONNECTION_STRING)
+const db = monk(process.env.CONNECTION_STRING)
 const collections = {}
 
 export const getCollection = (name) => {
