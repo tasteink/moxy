@@ -1,5 +1,5 @@
 import { getCollection } from "./mongo"
-import micro, { send, json } from "micro"
+import { send, json } from "micro"
 
 export const find = async (req, res) => {
   const body = await json(req)
