@@ -1,6 +1,6 @@
 # moxy
 
-[![Deploy to Vercel](https://deploy.now.sh/static/button.svg)](/import/project?template=https://github.com/tasteink/moxy?env=CONNECTION_STRING)
+[![Deploy to Vercel](https://deploy.now.sh/static/button.svg)](https://vercel.com/import/project?template=https://github.com/tasteink/moxy?env=CONNECTION_STRING)
 
 ## Notes
 
