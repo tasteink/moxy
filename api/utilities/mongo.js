@@ -11,12 +11,12 @@ const onError = (error) => {
   throw error
 }
 
-export const db = monk(process.env.CONNECTION_STRING)
-db.then(onConnected).catch(onError)
+export const mongo = monk(process.env.CONNECTION_STRING).then(onConnected).catch(onError)
 const collections = {}
 
-export const getCollection = (name) => {
+export const getCollection = async (name) => {
   if (collections[name]) return collections[name]
+  const db = await mongo
 
   const collection = db.get(name)
   const insert = (args) => awa(collection.insert(...args))

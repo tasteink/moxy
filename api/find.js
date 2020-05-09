@@ -6,7 +6,7 @@ import { getCollection } from "./utilities/mongo"
 
 const find = async (req, res) => {
   const { method, query, body, headers } = req
-  const collection = getCollection(body.collection)
+  const collection = await getCollection(body.collection)
   const [error, docs] = await collection.find(body.args)
   res.status(200).json({ body: [error, docs] })
 }
