@@ -11,7 +11,8 @@ const onError = (error) => {
   throw error
 }
 
-export const db = monk(process.env.CONNECTION_STRING).then(onConnected).catch(onError)
+export const db = monk(process.env.CONNECTION_STRING)
+db.then(onConnected).catch(onError)
 const collections = {}
 
 export const getCollection = (name) => {
