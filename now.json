@@ -1,4 +1,5 @@
 {
+  "type": "static",
   "env": {
     "CONNECTION_STRING": "@connection-string"
   }
